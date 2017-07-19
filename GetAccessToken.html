@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+    <meta charset="UTF-8">
+    <title>Get Access Token</title>
+</head>
+<body>
+
+<a href="https://api.moves-app.com/oauth/v1/authorize?response_type=code&client_id=<your client id here>&redirect_uri=http://somethinglikethat/&scope=location activity" target="_blank">ここ</a>
+にアクセスして，表示されたPINコードをスマホのMOVESで入力</br>
+リダイレクト先のURLからcodeをコピーして下のテキストボックスに貼り付け</br>
+    <form action="https://api.moves-app.com/oauth/v1/access_token" method="post">
+        <input type="hidden" name="grant_type" value="authorization_code">
+        <p>Authorization Code：<input type="text" name="code" value="" size="100" /></p>
+        <input type="hidden" name="client_id" value="<your client id here>">
+        <input type="hidden" name="client_secret" value="<your client secret here>">
+        <input type="hidden" name="redirect_uri" value="http://somethinglikethat/">
+        <button>Get Access Token</button>
+    </form>
+</body>
+</html>
